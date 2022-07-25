@@ -57,16 +57,18 @@ void loop(){
   //Hora
   lcd.setCursor(0,1);
   lcd.print(Clock.getHour(h12, PM)); 
-  lcd.print(":"); 
+  lcd.print(":");
+  //Minutos 
   if (Clock.getMinute() < 10) {
     lcd.print("0");
     lcd.print(Clock.getMinute());} 
     else {lcd.print(Clock.getMinute());}
-  lcd.print(":"); 
-  if (Clock.getSecond() < 10) {
-    lcd.print("0");
-    lcd.print(Clock.getSecond());} 
-    else {lcd.print(Clock.getSecond());}
+  //Segundos  
+  //lcd.print(":"); 
+  //if (Clock.getSecond() < 10) {
+  //  lcd.print("0");
+  //  lcd.print(Clock.getSecond());} 
+  //  else {lcd.print(Clock.getSecond());}
 
   //Temp
   lcd.setCursor(12,0);
@@ -75,6 +77,7 @@ void loop(){
     lcd.print(t,0);
     lcd.print(" ");} 
     else {lcd.print(t,0);}
+  //Sensacion Termica
   lcd.setCursor(11,1);
   lcd.print("St:");
   if (hic < 10){
@@ -84,11 +87,6 @@ void loop(){
   lcd.print(hic,0);
 
   //reset
-  delay(1000);  
-  //lcd.clear();
-  //lcd.setCursor(9,0);
-  //lcd.print("      ");
-  //lcd.setCursor(0,1);
-  //lcd.print("                "); 
+  delay(5000);  
   
 }
